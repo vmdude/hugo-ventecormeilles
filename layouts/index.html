@@ -1,0 +1,71 @@
+{{ define "main" }}
+
+<!-- Banner Start -->
+{{ with .Site.Data.homepage.banner }}
+<section class="section banner">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-10">
+        <h2 class="cd-headline clip is-full-width mb-4 ">
+          {{ .title | markdownify }} <br>
+          <span class="text-color">
+            <b class="is-visible">{{ .subtitle | markdownify }}</b>
+          </span>
+        </h2>
+        <p>{{ .content | markdownify }}</p>
+      </div>
+    </div>
+  </div>
+</section>
+{{ end }}
+<!-- Banner End -->
+
+<!-- Portfolio start -->
+<section class="portfolio">
+  <div class="container">
+    <div class="row mb-5">
+      <div class="col-10">
+        <div class="btn-group btn-group-toggle " data-toggle="buttons">
+          <label class="btn active ">
+            <input type="radio" name="shuffle-filter" value="all" checked="checked" />All Projects
+          </label>
+          {{ $categories := slice }}
+          {{ range (where .Site.RegularPages "Type" "portfolio") }}
+          {{ $categories = $categories | append .Params.Category }}
+          {{ end }}
+          {{ range ( $categories | uniq ) }}
+          <label class="btn">
+            <input type="radio" name="shuffle-filter" value="{{ . | urlize }}" />{{ . | humanize }}
+          </label>
+          {{ end }}
+        </div>
+      </div>
+    </div>
+
+    <div class="row shuffle-wrapper portfolio-gallery">
+      {{ range (where .Site.RegularPages "Type" "portfolio")}}
+      <div class="col-lg-4 col-6 mb-4 shuffle-item" data-groups="[&quot;{{ .Params.Category | urlize }}&quot;]">
+        <div class="position-relative inner-box">
+          <div class="image position-relative">
+            <img src="{{ .Params.Image | absURL }}" alt="portfolio-image" class="img-fluid w-100 d-block">
+            <div class="overlay-box">
+              <a class="portfolio-image popup-gallery" href="{{ .Params.Image | absURL }}">
+                <i class="ti-plus"></i>
+              </a>
+              <div class="overlay-inner">
+                <a class="overlay-content" href="{{ .Permalink }}">
+                  <h5 class="mb-0">{{ .Title }}</h5>
+                  <p>{{ .Params.Category | humanize }}</p>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      {{ end }}
+    </div>
+  </div>
+</section>
+<!-- Portfolio End -->
+
+{{ end }}

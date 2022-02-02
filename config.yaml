@@ -1,0 +1,79 @@
+baseURL: https://vente.cormeill.es/
+languageCode: fr-fr
+theme: thomson-hugo
+title: 29 rue pierre brossolette
+summaryLength: 10
+paginate: 4
+params:
+  plugins:
+    css:
+      - link: plugins/bootstrap/bootstrap.min.css
+      - link: plugins/themify/css/themify-icons.css
+      - link: plugins/owl-carousel/owl.carousel.min.css
+      - link: plugins/owl-carousel/owl.theme.default.min.css
+      - link: plugins/animated-text/animated-text.css
+      - link: plugins/magnific-popup/magnific-popup.css
+    js:
+      - link: plugins/jQuery/jquery.min.js
+      - link: plugins/bootstrap/bootstrap.min.js
+      - link: plugins/owl-carousel/owl.carousel.min.js
+      - link: plugins/shuffle/shuffle.min.js
+      - link: plugins/animated-text/animated-text.js
+      - link: plugins/google-map/gmap.js
+      - link: plugins/magnific-popup/magnific-popup.min.js
+  home: Home
+  logo: images/logo.png
+  mobile: +880 2544 658 256
+  email: steve.fruits@email.com
+  address: 125/A, CA Commercial Area, California, USA
+  author: themefisher
+  description: This is meta description
+  google_analitycs_id: ""
+  contact_form_action: "#"
+  copyright: Copyrighht &copy; 2020 a theme by [themefisher](https://themefisher.com)
+  preloader:
+    enable: true
+    preloader: ""
+  gmap:
+    enable: true
+    gmap_api: https://maps.googleapis.com/maps/api/js?key=AIzaSyBu5nZKbeK-WHQ70oqOWo-_4VmwOwKP9YQ
+    map_latitude: "51.5223477"
+    map_longitude: "-0.1622023"
+    map_marker: images/marker.png
+  social:
+    - icon: ti-facebook
+      link: "#"
+    - icon: ti-instagram
+      link: "#"
+    - icon: ti-dribbble
+      link: "#"
+    - icon: ti-twitter-alt
+      link: "#"
+menu:
+  main:
+    - name: Home
+      url: /
+      weight: 1
+    - name: About
+      url: about
+      weight: 2
+    - name: Blog
+      url: blog
+      weight: 3
+    - name: Portfolio
+      url: portfolio
+      weight: 4
+    - name: Contact
+      url: contact
+      weight: 5
+    - name: Dropdown
+      url: "#"
+      weight: 6
+    - parent: Dropdown
+      name: Child 1
+      url: "#"
+      weight: 1
+    - parent: Dropdown
+      name: Child 2
+      url: "#"
+      weight: 2
