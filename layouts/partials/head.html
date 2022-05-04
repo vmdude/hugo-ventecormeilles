@@ -1,0 +1,22 @@
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+  <meta charset="utf-8" />
+  <title>Vente: 29 rue pierre brossolette</title>
+  <meta name="robots" content="noindex, follow" />
+  <meta name="description" content="" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, shrink-to-fit=no"
+  />
+
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+  {{ $fonticons := resources.Get "css/font-icons.css" | minify }}
+  <link rel="stylesheet" href="{{ $fonticons.Permalink }}" />
+  {{ $plugins := resources.Get "css/plugins.css" | minify }}
+  <link rel="stylesheet" href="{{ $plugins.Permalink }}" />
+  {{ $style := resources.Get "css/style.css" | minify }}
+  <link rel="stylesheet" href="{{ $style.Permalink }}" />
+
+  {{ $jquery := resources.Get "js/jquery-3.6.0.js" | minify }}
+  <script src="{{ $jquery.Permalink }}"></script>
+</head>
