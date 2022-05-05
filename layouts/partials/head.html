@@ -10,13 +10,14 @@
   />
 
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
-  {{ $fonticons := resources.Get "css/font-icons.css" | minify }}
-  <link rel="stylesheet" href="{{ $fonticons.Permalink }}" />
-  {{ $plugins := resources.Get "css/plugins.css" | minify }}
-  <link rel="stylesheet" href="{{ $plugins.Permalink }}" />
   {{ $style := resources.Get "css/style.css" | minify }}
   <link rel="stylesheet" href="{{ $style.Permalink }}" />
+  {{ $fancyboxcss := resources.Get "css/jquery.fancybox.min.css" }}
+  <link rel="stylesheet" href="{{ $fancyboxcss.Permalink }}" />
 
   {{ $jquery := resources.Get "js/jquery-3.6.0.js" | minify }}
   <script src="{{ $jquery.Permalink }}"></script>
+  {{ $fancyboxjs := resources.Get "js/jquery.fancybox-3.5.7.min.js" }}
+  <script src="{{ $fancyboxjs.Permalink }}"></script>
+
 </head>
