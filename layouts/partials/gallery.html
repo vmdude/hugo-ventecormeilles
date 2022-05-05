@@ -6,10 +6,10 @@
           <h1 class="section-title">Quelques photos</h1>
         </div>
         <div class="gallery mb-5">
-        {{ $path := "static/gallery" }}
+        {{ $path := "static/img/gallery" }}
         {{ range (readDir $path) }}
           {{ if ne .Name ".DS_Store" }}
-          {{ $src := print "gallery/" .Name }}
+          {{ $src := print "img/gallery/" .Name }}
           <a data-fancybox="gallery" href="{{ $src }}">
             <img loading="lazy" src="{{ $src }}" alt="{{ .Name }}" />
           </a>
