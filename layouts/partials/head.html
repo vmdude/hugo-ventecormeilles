@@ -10,7 +10,7 @@
   />
 
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
-  {{ $style := resources.Get "css/style.css" | minify }}
+  {{ $style := resources.Get "css/style.scss" | toCSS | minify }}
   <link rel="stylesheet" href="{{ $style.Permalink }}" />
   {{ $fancyboxcss := resources.Get "css/jquery.fancybox.min.css" }}
   <link rel="stylesheet" href="{{ $fancyboxcss.Permalink }}" />
